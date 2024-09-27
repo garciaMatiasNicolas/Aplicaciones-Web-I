@@ -3,15 +3,10 @@
 <head>
   <title>Jovies | Inicio</title>
   <meta charset="utf-8">
-  <!--MyStyles-->
-  <link rel="stylesheet" type="text/css" href="./styles/styles.css">
-  <!--Bootstrap-->
+  <link rel="stylesheet" type="text/css" href="./estilos/styles.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="icon" href="./assets/logo.png" type="image/x-icon">
 </head>
-
-<body class="background"> 
-  <!--NavBar-->   
+<body class="background">    
   <nav class="navbar navbar-light bg-transparent fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html"><img class="imgMenu" src="./img/logo.png" alt="logo jovies"></a>
@@ -27,10 +22,16 @@
               <a class="nav-link active text-white navFont" aria-current="page" href="index.html">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-white navFont" href="#locales">Sucursales</a>
+              <a class="nav-link active text-white navFont" href="#">Sucursales</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-white navFont" href="./pages/products/hamburguesas.html">Hace tu pedido!</a>
+              <a class="nav-link active text-white navFont" href="./secciones/hamburguesas.html">Hace tu pedido!</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-white navFont" href="./secciones/pedido.html">Ver pedido</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-white navFont" href="">Nosotros</a>
             </li>
           </ul>
         </div>
@@ -38,9 +39,9 @@
     </div>
   </nav>
   
+  
   <main>
-    <!--Carrousel inicio-->
-    <section >
+    <section>
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -65,33 +66,8 @@
       </div>
     </section>
 
-    <!--Cards-->
     <section class="container-fluid mb-5">
       <div id="indexCards" class="row d-flex flex-row justify-content-evenly align-items-center p-0 mt-5"></div>
-    </section>
-
-    <!--Locales-->
-    <section id="locales" class="d-flex w-100 flex-column justify-content-between">
-      <div class="d-flex w-75 flex-column justify-content-between align-items-start ms-5">
-        <h3 class="fontTitle text-white">Conoce todas nuestras sucursales!</h3>
-        <form class="form-floating w-100 mb-3 d-flex justify-content-between align-items-center">
-          <input type="text" class="form-control w-75" id="floatingInputValue" placeholder="name">
-          <label for="floatingInputValue">Busca por el nombre de tu Provincia/Ciudad</label>
-          <button type="button" class="btn btn-light btn-lg me-5" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-            <img src="./img/search.png" class="iconT" alt="...">
-          </button>
-        </form> 
-      </div>
-      <div class="collapse" id="collapseExample">
-        <div class="card card-body bg-black w-75 ms-5">
-          <table>
-            <thead>
-              <h3 class="text-white fontTitle">SUCURSALES</h3>
-            </thead>
-            <tbody id="sucursales"></tbody>
-          </table>
-        </div>
-      </div>
     </section>
  
   </main>
@@ -111,7 +87,7 @@
           <h3 class="fontTitle text-white">Pedi tu Jovie</h3>
           <ul class="navbar-nav ">
             <li class="nav-item">
-              <a class="nav-link active text-white" href="./secciones/hamburguesas.html" >Ver Menu</a>
+              <a class="nav-link active text-white" href="" >Ver Menu</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active text-white" href="./secciones/hamburguesas.html">Quiero mi Jovie</a>
@@ -129,7 +105,7 @@
           <div class="d-flex justify-content-start w-100">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active text-white" href="https://www.buenosaires.gob.ar/defensaconsumidor">Defensa del consumidor</a>
+                <a class="nav-link active text-white" href="">Defensa del consumidor</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active text-white" href="">Trabaja con nosotros</a>
@@ -165,9 +141,7 @@
     </div>
   </footer>
     
-  <!--Bootstrap-->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="./scripts/index.js"></script>
 </body>  
 </html>

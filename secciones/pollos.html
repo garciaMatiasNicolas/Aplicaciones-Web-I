@@ -3,19 +3,11 @@
 <head>
   <title>Jovies | Pedidos | Pollos</title>
   <meta charset="utf-8">
-   <!--MyStyles-->
-  <link rel="stylesheet" type="text/css" href="../../styles/styles.css">
-   <!--Bootsrap-->
+  <link rel="stylesheet" type="text/css" href="../estilos/styles.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-   <!--Toastify-->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-   <!--SweetAlert-->
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <link rel="icon" href="../img/logo.png" type="image/x-icon">
 </head>
 
 <body class="background">
-   <!--NavBar-->
     <nav class="navbar navbar-light bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="../index.html"><img class="imgMenu" src="../img/logo.png" alt="logo jovies"></a>
@@ -44,10 +36,13 @@
                     <a class="nav-link active text-white navFont" aria-current="page" href="../index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link active text-white navFont" href="../index.html">Sucursales</a>
+                    <a class="nav-link active text-white navFont" href="#">Sucursales</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link active text-white navFont" href="hamburguesas.html">Hace tu pedido!</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active text-white navFont" href="#">Contacto</a>
                     </li>
                 </ul>
               </div>
@@ -56,8 +51,8 @@
       </nav>
 
       <main>
-        <!--Modal carrito de compras-->
-        <section class="mt-5 ms-3 ">
+
+        <section class="mt-5 ms-3">
           <button id="btnCarrito1" type="button" class="btn btnColor btn-lg d-flex justify-content-between align-items-center" data-bs-toggle="modal" data-bs-target="#carrito2">
             <img class="logoSize" src="../img/carrito.png" alt="">
            </button>
@@ -68,19 +63,90 @@
                    <h5 class="modal-title" id="carrito2">Su Carrito</h5>
                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                  </div>
-                 <div class="modal-body" id="modalBody2"></div>
-                 <div id="precio2" class="ms-3"><h3 class="fontTitle">Precio Total: $<span class="fontTitle" id="precioTotal2">0</span></h3></div>
-                 <div id="modal-footer1" class="modal-footer d-flex w-100 justify-content-between">
-                    <button type="button" id="btnVaciar2" data-bs-dismiss="modal" aria-label="Close" class="btn bg-dark text-white h-50 mt-2">Vaciar</button>
-                    <button type="button" id="btnPedir" class="btn bg-dark text-white" data-bs-dismiss="modal">Pedir</button>
+                 <div class="modal-body" id="modalBody2">
+                   
+                 </div>
+                 <div id="modal-footer1" class="modal-footer">
+                   <button type="button" class="btn btnColor text-white" data-bs-dismiss="modal">Pedir</button>
                  </div>
                </div>
              </div>
            </div>
         </section>
 
-        <!--Productos-->
-        <section id="sectionPollos" class="container-fluid d-flex justify-content-between align-items-start mt-5 w-100 flex-wrap"></section>
+        <section id="sectionPollos" class="container-fluid d-flex justify-content-between align-items-start mt-5 w-100 flex-wrap">
+          <div class=" d-flex flex-column justify-content-between align-items-center mt-5">
+            <img class="imgBurguers mb-3" src="../img/bucketArma.png" alt="">
+            <h2 class="titleFooter text-white">Arma Tu Bucket!</h2>
+            <button type="button" class="btn btnColor btn-lg text-white" data-bs-toggle="modal" data-bs-target="#arma">Descripcion</button>
+            <div class="modal fade" id="arma" tabindex="-1" aria-labelledby="armaLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header d-flex flex-column justify-content-between">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                      <h2 class="modal-title fontTitle" id="exampleModalLabel">Arma tu Bucket! (100$ x Pieza)</h2>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <img class="imgBurguers mb-3" src="../img/bucketArma.png" alt="">
+                  </div>
+                  <div class="modal-body">
+                    <h2 class="fontTitle1">Dejanos tus datos asi agendamos tu pedido</h2>
+                    <input type=text name="nombre" placeholder="Tu nombre..">
+                    <input type=text name="direccion" placeholder="Direccion">
+                    <h2 class="fontModal mt-5">Forma de pago</h2>
+                            <div class="d-flex  justify-content-evenly w-50 mt-2">
+                                <div class="d-flex flex-column justify-content-between align-items-start w-100">
+                                    <label for="efectivo">Efectivo</label>
+                                    <input type=radio value="efectivo">
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-start w-100">
+                                    <label for="transf">Transferencia</label>
+                                    <input type=radio value="transf">
+                                </div>
+                            </div>
+                    <div class="d-flex flex-column justify-content-between align-items-start mt-3 w-100">
+                        <h2 class="fontTitle1">Armalo como quieras! (min. 8 piezas - max. 16 piezas)</h2>
+                        <div class="d-flex justify-content-evenly mt-3">
+                          <label for="pechuga">Pechuga</label>
+                          <input class="ms-2" type=checkbox value="pechuga">
+                          <input  class="ms-2" type="text" name="cantidad" placeholder="Cantidad..">
+                        </div>
+                        <div class="d-flex justify-content-evenly mt-3">
+                          <label for="alitas">Alitas</label>
+                          <input class="ms-2" type=checkbox value="alitas">
+                          <input  class="ms-2" type="text" name="cantidad" placeholder="Cantidad..">
+                        </div>
+                        <div class="d-flex justify-content-evenly mt-3">
+                          <label for="patitas">Patitas</label>
+                          <input class="ms-2" type=checkbox value="patitas">
+                          <input  class="ms-2" type="text" name="cantidad" placeholder="Cantidad..">
+                        </div>
+                        <div class="d-flex justify-content-evenly mt-3">
+                          <label for="muslo">Muslos</label>
+                          <input class="ms-2" type=checkbox value="muslo">
+                          <input  class="ms-2" type="text" name="cantidad" placeholder="Cantidad..">
+                        </div>
+                    </div>
+                    <h2 class="fontModal mt-5">¿Desea agregar esto a su combo?</h2>
+                    <div class="d-flex  justify-content-evenly w-50 mt-2 mb-4">
+                        <div class="d-flex flex-column justify-content-between align-items-center w-100">
+                          <label for="bebida">Gaseosa($200)</label>
+                          <input type=checkbox value="bebida">
+                        </div>
+                        <div class="d-flex flex-column justify-content-between align-items-center w-100">  
+                            <label for="papas">Papas($200)</label>
+                            <input type=checkbox value="papas">
+                        </div>
+                    </div>
+                  <div class="modal-footer">
+                    <h2 class="fontModal">Total :</h2>
+                    <button type="button" class="btn btnColor text-white">Añadir a mi pedido</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
       </main>
 
@@ -153,10 +219,7 @@
         </div>
       </footer>
     
-    <!--Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-    <!--Toastify-->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="../scripts/pollo.js"></script>
 </body>
 </html>

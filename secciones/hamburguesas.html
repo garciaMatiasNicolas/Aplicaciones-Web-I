@@ -3,22 +3,14 @@
 <head>
   <title>Jovies | Pedidos | Burguers</title>
   <meta charset="utf-8">
-  <!--MyStyles-->
-  <link rel="stylesheet" type="text/css" href="../../styles/styles.css">
-  <!--Bootstrap-->
+  <link rel="stylesheet" type="text/css" href="../estilos/styles.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <!--Toastify-->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-  <!--SweetAlert-->
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <link rel="icon" href="../img/logo.png" type="image/x-icon">
 </head>
 
 <body class="background"> 
-    <!--NavBar-->
-    <nav class="navbar navbar-light bg-dark ">
+    <nav class="navbar navbar-light bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="../index.html"><img class="imgMenu" src="../../img/logo.png" alt="logo jovies"></a>
+          <a class="navbar-brand" href="../index.html"><img class="imgMenu" src="../img/logo.png" alt="logo jovies"></a>
           <div class="navProductos">
             <ul class="d-flex flex-row justify-content-between align-items-end w-100 navbar-nav">
                 <li class="nav-item w-33 sizeLi">
@@ -32,7 +24,7 @@
                 </li>
             </ul>      
           </div>
-          <button id="sweet" type="button" class="btn btnColor btn-lg text-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">Menu</button>
+          <button type="button" class="btn btnColor btn-lg text-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">Menu</button>
             <div class="offcanvas offcanvas-end bg-black" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
               <div class="offcanvas-header">
                 <h2 class="offcanvas-title text-white" id="offcanvasNavbarLabel">Bienvenido a Jovies</h2>
@@ -44,10 +36,13 @@
                     <a class="nav-link active text-white navFont" aria-current="page" href="../index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link active text-white navFont" href="../index.html">Sucursales</a>
+                    <a class="nav-link active text-white navFont" href="#">Sucursales</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link active text-white navFont" href="hamburguesas.html">Hace tu pedido!</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active text-white navFont" href="#">Contacto</a>
                     </li>
                 </ul>
               </div>
@@ -57,10 +52,9 @@
 
     
       <main>
-        <!--Modal carrito de compras-->
         <section class="mt-5 ms-3" >
           <button id="btnCarrito" type="button" class="btn btnColor btn-lg d-flex justify-content-between align-items-center" data-bs-toggle="modal" data-bs-target="#carrito">
-           <img class="logoSize" src="../../img/carrito.png" alt="">
+           <img class="logoSize" src="../img/carrito.png" alt="">
           </button>
           <div class="modal fade" id="carrito" tabindex="-1" aria-labelledby="carrito" aria-hidden="true">
             <div class="modal-dialog">
@@ -69,18 +63,17 @@
                   <h5 class="modal-title" id="carrito">Carrito de compras</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="modalBody"></div>
-                <div class="ms-3" id="precio"><h3 class="fontTitle">Precio Total: $<span class="fontTitle" id="precioTotal">0</span></h3></div>
-                <div id="modal-footer" class="modal-footer d-flex w-100 justify-content-between">
-                  <button type="button" id="btnVaciar" data-bs-dismiss="modal" aria-label="Close" class="btn bg-dark text-white h-50 mt-2">Vaciar</button>
-                  <button type="button" id="btnEnd" class="btn bg-dark text-white" data-bs-dismiss="modal">Pedir</button>
+                <div class="modal-body" id="modalBody">
+                  
+                </div>
+                <div id="modal-footer" class="modal-footer">
+                  <button type="button" class="btn btnColor text-white" data-bs-dismiss="modal">Pedir</button>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        
-        <!--Productos-->
+
         <section id="sectionHamburguesas" class="container-fluid d-flex justify-content-between align-items-start mt-5 w-100 flex-wrap">
         </section>
         
@@ -92,7 +85,7 @@
           <div class="row">
             <div class="col-6 mt-5">
               <div class="d-flex justify-content-evenly w-50">
-                <img class="imgMenu" src="../../img/logo.png" alt="">
+                <img class="imgMenu" src="../img/logo.png" alt="">
                 <h3 class="titleFooter mt-3 me-3">JOVIES</h3>
               </div>
             </div>
@@ -119,7 +112,7 @@
               <div class="d-flex justify-content-start w-100">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link active text-white" href="https://www.buenosaires.gob.ar/defensaconsumidor">Defensa del consumidor</a>
+                    <a class="nav-link active text-white" href="">Defensa del consumidor</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active text-white" href="">Trabaja con nosotros</a>
@@ -145,9 +138,9 @@
                 <h3 class="fontTitle1 text-white">Seguinos en las redes!</h3>
               </div>
               <div class="d-flex justify-content-end">
-                <img class="logoSize" src="../../img/twitter.png" alt="">
-                <img class="logoSize" src="../../img/logoFace.png" alt="">
-                <img class="logoSize" src="../../img/insta.png" alt="">
+                <img class="logoSize" src="../img/twitter.png" alt="">
+                <img class="logoSize" src="../img/logoFace.png" alt="">
+                <img class="logoSize" src="../img/insta.png" alt="">
     
               </div>
             </div>
@@ -155,10 +148,8 @@
         </div>
       </footer>
 
-    <!--Bootstrap-->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-    <!--Toastify-->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="../scripts/burguer.js"></script>
 </body>
 </html>

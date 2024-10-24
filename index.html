@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">  
+<head>
+  <title>Jovies | Inicio</title>
+  <meta charset="utf-8">
+  <!--MyStyles-->
+  <link rel="stylesheet" type="text/css" href="./estilos/styles.css">
+  <!--Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="icon" href="./img/logo.png" type="image/x-icon">
+</head>
+
+<body class="background"> 
+  <!--NavBar-->   
+  <nav class="navbar navbar-light bg-transparent fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><img class="imgMenu" src="./img/logo.png" alt="logo jovies"></a>
+      <button type="button" class="btn btnColor btn-lg text-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">Menu</button>
+      <div class="offcanvas offcanvas-end bg-black" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h2 class="offcanvas-title text-white" id="offcanvasNavbarLabel">Bienvenido a Jovies</h2>
+          <button type="button" class="btn-close btnColor text-" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active text-white navFont" aria-current="page" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-white navFont" href="#locales">Sucursales</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-white navFont" href="./secciones/hamburguesas.html">Hace tu pedido!</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <main>
+    <!--Carrousel inicio-->
+    <section>
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./img/fondo1.png" class="d-block w-100" alt="combo hamburguesa">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/poio.jpg" class="d-block w-100" alt="combo pollo">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/appFondo.png" class="d-block w-100" alt="descarga nuestra app">
+            
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!--Cards-->
+    <section class="container-fluid mb-5">
+      <div id="indexCards" class="row d-flex flex-row justify-content-evenly align-items-center p-0 mt-5"></div>
+    </section>
+
+    <!--Locales-->
+    <section id="locales" class="d-flex w-100 flex-column justify-content-between">
+      <div class="d-flex w-75 flex-column justify-content-between align-items-start ms-5">
+        <h3 class="fontTitle text-white">Conoce todas nuestras sucursales!</h3>
+        <form class="form-floating w-100 mb-3 d-flex justify-content-between align-items-center">
+          <input type="text" class="form-control w-75" id="floatingInputValue" placeholder="name">
+          <label for="floatingInputValue">Busca por el nombre de tu Provincia/Ciudad</label>
+          <button type="button" class="btn btn-light btn-lg me-5" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <img src="./img/search.png" class="iconT" alt="...">
+          </button>
+        </form> 
+      </div>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body bg-black w-75 ms-5">
+          <table>
+            <thead>
+              <h3 class="text-white fontTitle">SUCURSALES</h3>
+            </thead>
+            <tbody id="sucursales"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+ 
+  </main>
+
+  <footer class="bg-black ">
+    <div class="container-fluid">
+      
+      <div class="row">
+        <div class="col-6 mt-5">
+          <div class="d-flex justify-content-evenly w-50">
+            <img class="imgMenu" src="./img/logo.png" alt="">
+            <h3 class="titleFooter mt-3 me-3">JOVIES</h3>
+          </div>
+        </div>
+
+        <div class="col-3 p-0 mt-5" >
+          <h3 class="fontTitle text-white">Pedi tu Jovie</h3>
+          <ul class="navbar-nav ">
+            <li class="nav-item">
+              <a class="nav-link active text-white" href="./secciones/hamburguesas.html" >Ver Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-white" href="./secciones/hamburguesas.html">Quiero mi Jovie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-white" href="./secciones/pollos.html">Quiero Pollo</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-3 mt-5 d-flex flex-column justify-content-between align-items-center ">
+          <div class="d-flex justify-content-start w-100"> 
+            <h3 class="fontTitle text-white">Informacion</h3>
+          </div>
+          <div class="d-flex justify-content-start w-100">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active text-white" href="https://www.buenosaires.gob.ar/defensaconsumidor">Defensa del consumidor</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-white" href="">Trabaja con nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-white" href="">Contactanos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="container-fluid mt-5">
+      <div class="row">
+        <div class="col-6">
+          <p class="fontP text-white">TM © 2022 Jovies Corporation. Todos los derechos reservados.</p>
+        </div>
+
+        <div class="col-6 m-0">
+          <div class="d-flex justify-content-end"> 
+            <h3 class="fontTitle1 text-white">Seguinos en las redes!</h3>
+          </div>
+          <div class="d-flex justify-content-end">
+            <img class="logoSize" src="./img/twitter.png" alt="">
+            <img class="logoSize" src="./img/logoFace.png" alt="">
+            <img class="logoSize" src="./img/insta.png" alt="">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+    
+  <!--Bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <!--MyScript-->
+  <script src="./scripts/index.js"></script>
+  
+</body>  
+</html>

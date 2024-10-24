@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+.background{
+    background-color: rgba(0, 0, 0, 0.911);
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 25rem;
+}
+
+.ocultar{
+    display: none;
+}
+
+.btnAgregar{
+    background-color: black;
+}
+
+.fontModal{
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: medium;
+}
+
+.fontTitle{
+    font-family: Poppins;
+    font-weight: 400;
+}
+
+.fontTitle1{
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: large;
+}
+
+.titleFooter{
+    font-family:Poppins;
+    font-weight: 400;
+    font-size: xx-large;
+    color: white;
+}
+
+.navFont{
+    font-family:Poppins;
+    font-weight: 400;
+    font-size: larger;
+}
+
+.fontP{
+
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: large;
+}
+
+.imgMenu{
+    width: 5rem;
+    height: 5rem;
+}
+
+.fondo{
+    width: 100%;
+    height: 70%;
+}
+
+.btnColor{
+    background-color: rgb(146, 0, 0) !important;
+}
+
+.iconT{
+    width: 2rem;
+    height: 2rem;
+}
+
+.btnColor:hover{
+    border: 1px solid white;
+}
+
+footer{
+   bottom: 0;
+   width: 100%;
+   position: absolute;
+   margin-top: auto;
+}
+
+.navProductos{
+    width: 35rem;
+    margin-top: 28px;
+}
+
+.sizeLi{
+    width: 33%;
+    display: contents;
+}
+
+.logoSize{
+    width: 3rem;
+    height: 3rem;
+}
+
+.footer1{
+    gap: 2rem;
+    width: 100%;
+}
+
+.imgBurguers{
+    width: 15rem;
+    height: 15rem;
+}
+
+.imgAnimacion{
+    transition: 0.5s;
+}
+
+.imgAnimacion:hover{
+    transition: 0.5s;
+    transform: scale(1.1, 1.1);
+}
+
+.imgPedidosModal{
+    width: 8rem;
+    height: 8rem;
+}
+
+.columna{
+    width: 33%;
+    height: 100%;
+}
+
+.observacion{
+ width: 90%;
+ height: 8rem;
+}
+
+.botonCart{
+    width: 11rem;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btnX{
+    background-color: transparent !important;
+}
+
+.fontCart{
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: large;
+    margin-top: 3px;
+    margin-left: 5px;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.pedidos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+@media(min-width:1024px){
+    
+    .imgBurguers{
+        width: 21rem;
+        height: 21rem;
+    }
+
+    .imgPedidosModal{
+        width: 10rem;
+        height: 10rem;
+    }
+
+}
+

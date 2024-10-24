@@ -1,0 +1,278 @@
+{
+  "index" :{
+    "cards": [
+      {
+        "id": "burguer",
+        "title": "Nueva Fat Lovie!",
+        "image": "./img/fondo1.png",
+        "description": "Llevando el combo de la nueva fat lovie, podes llevarte un combo fat joe con un 50% OFF!",
+        "buttonText": "Quiero mi combo!",
+        "link": "./secciones/hamburguesas.html"
+      },
+      {
+        "id": "sucursales",
+        "title": "Conoce todas nuestras sucursales!",
+        "image": "./img/sucursales.jpg",
+        "description": "En jovies, siempre buscamos estar cerca tuyo, conoce nuestras sucursales!",
+        "buttonText": "Ver sucursales",
+        "link": "#locales"
+      },
+      {
+        "id": "app",
+        "title": "Descarga nuestra app para todas las plataformas",
+        "image": "./img/app.jpg",
+        "description": "Ingresa al playstore de tu smartphone y tene tu pedido al alcance de tu telefono",
+        "buttonText": "Descargar",
+        "link": ""
+      },
+      {
+        "id": "pollo",
+        "title": "Pedi nuestros buckets de Pollo",
+        "image": "./img/poio.jpg",
+        "description": "En jovies, tenemos el mejor pollo rebozado, para que lo disfrutes vos!",
+        "buttonText": "Pedir mi Bucket",
+        "link": "./secciones/pollos.html"
+      },
+      {
+        "id": "trabajo",
+        "title": "¿Te interesaria formar parte de jovies?",
+        "image": "./img/nosotros.jpg",
+        "description": "Aqui siempre estamos abiertos a darle oportunidades aquellos que quieran formar parte de nuestro Staff, sumate vos tambien",
+        "buttonText": "+ Info",
+        "link": ""
+      },
+      {
+        "id": "arma",
+        "title": "Arma la tuya!",
+        "image": "./img/jovie.jpg",
+        "description": "¿Ninguna de nuestras opciones te convencio? No te preocupes, tenemos la solucion. Arma tu Jovie como vos la desees!",
+        "buttonText": "Quiero mi Jovie",
+        "link": "./secciones/hamburguesas.html"
+      }
+    ]
+  },
+  
+  "hamburguesas": [
+  { 
+    "id": "joe", 
+    "name": "Fat Joe", 
+    "description": "Ingredientes: Triple medallon de carne, cheddar, panceta, salsa jovie, mayonesa y cebolla caramelizada ", 
+    "price": 1100, 
+    "image":"../img/joe.png"  
+  },
+  {
+    "id": "lovie" , 
+    "name": "Fat Lovie", 
+    "description": "Ingredientes: Doble Medallon de carne, huevo, lechuga, tomate, salsa jovie, mayonesa, panceta y cheddar", 
+    "price": 1150, 
+    "image": "../img/lovieMenu.png"
+
+  },
+  {
+    "id" : "rita" , 
+    "name" : "Rita's (Veggie)", 
+    "description" : "Ingredientes: Un medallon de soja texturizada, pepinillos, tomate. lechuga, cheddar y salsa jovie ", 
+    "price" : 1200, 
+    "image" : "../img/rita.png"
+
+  },
+  {
+    "id" : "dexter" , 
+    "name" : "Dexterino", 
+    "description" : "Ingredientes: Doble medallon de carne, extra panceta, cheddar y salsa jovie ", 
+    "price" : 1150, 
+    "image" : "../img/dexterino.png"
+
+  },
+  {
+    "id" : "harrison" , 
+    "name" :  "Harrison (Kids)", 
+    "description" : "Ingredientes: una hamburguesa simple con cheddar y salsa jovie ", 
+    "price" : 750, 
+    "image" : "../img/harrison.png"
+
+  },
+  {
+    "id" : "fatista" , 
+    "name" : "Fatista", 
+    "description" : "Ingredientes: Cuadruple medallon de carne,queso roquefort, salsa jovie, cebolla caramelizada, panceta y lechuga", 
+    "price" : 1250, 
+    "image" : "../img/fatist.png"
+
+  },
+  {
+    "id" : "debras" , 
+    "name" : "Debra 's", 
+    "description" :"Ingredientes: Un medallon de carne de 150gr, lechuga, pan con semillas, cheddar y cebolla crispy y mayonesa", 
+    "price" :1050, 
+    "image" :"../img/debras.png"
+
+  },
+  {
+    "id" : "doakes" , 
+    "name" :"Doakes", 
+    "description" :"Ingredientes: Pan negro, un medallon de carne, lechuga, tomate, cebolla, mayonesa, salsa jovie y pepinillos ", 
+    "price" :1200, 
+    "image" :"../img/doake.png"
+
+  },
+  {
+    "id" : "masuka" , 
+    "name" :"Masuka (Kids)", 
+    "description" : "Ingredientes: Pan, un medallon de pollo, lechuga, tomate, cheddar y panceta", 
+    "price" :850, 
+    "image" :"../img/masuka.png"
+
+  }
+
+  ],
+  "pollos": [
+  {
+      "id" : "jovie" , 
+      "name" : "Bucket Jovie", 
+      "description" : "Contiene: 6 pechugas, 2 muslitos, 3 patitas, 4 alitas y dip de salsa jovie y dip de barbacoa", 
+      "price" : 1350, 
+      "image" : "../img/bucketArma.png"
+  },
+  {
+    "id" : "ice",   
+    "name" :"Ice Truck bucket", 
+    "description" : "Contiene: 6 alitas, 6 pechugas y dip de salsa barbacoa", 
+    "price"  : 1250, 
+    "image" : "../img/iceTruck.png"
+  },
+  {
+    "id" : "trinity" , 
+    "name" : "Trinity bucket", 
+    "description" : "Contiene: 6 alitas, 3 patitas, 7 pechugas y dip de salsa jovie", 
+    "price" : 1250, 
+    "image" : "../img/trinity.png"
+  },
+  {
+    "id" : "bay" , 
+    "name" : "Bay Harbor Bucket", 
+    "description" : "Contiene: 2 alitas, 4 patitas, 4 pechugas, 6 muslitos y dip de salsa jovie", 
+    "price" : 1350, 
+    "image" : "../img/bayharbor.png"
+  },
+  {
+    "id" : "dooms" , 
+    "name" : "Dooms bucket", 
+    "description" : "Contiene: 10 pechugas, 6 muslitos y dip de salsa jovie", 
+    "price" : 1350, 
+    "image" : "../img/doomsDay.png"
+  },
+  {
+    "id" : "santa" , 
+    "name" : "Santa Muerte", 
+    "description" : "Contiene: 6 pechugas, 2 muslitos, 3 patitas y dip de salsa jovie (EXTRA picante el pollo)", 
+    "price" : 1350, 
+    "image" : "../img/santaM.png"
+  }
+  ],
+  "postres":[
+    {
+      "id" : "oreo" , 
+      "name" : "Helado Oreo", 
+      "price" : 650, 
+      "image" : "../img/oreo.png"
+    },
+    {
+      "id" : "kitk" , 
+      "name" : "Helado KitKat", 
+      "price" : 650, 
+      "image" : "../img/kitkat.png"
+    },
+    {
+      "id" : "mym" , 
+      "name" : "Helado m&m", 
+      "price" : 650, 
+      "image" : "../img/mym.png"
+    },
+    {
+      "id" : "sundaeC" , 
+      "name" : "Sundae Chocolate", 
+      "price" : 400, 
+      "image" : "../img/sundae.png"
+    },
+    {
+      "id" : "sundaeD" , 
+      "name" : "Sundae Dulce de leche", 
+      "price" : 400, 
+      "image" : "../img/sundae3.png"
+    },
+    {
+      "id" : "sundaeF" , 
+      "name" : "Sundae de frutilla", 
+      "price" : 400, 
+      "image" : "../img/sundae-frutilla.png"
+    },
+    {
+      "id" : "cono" , 
+      "name" : "Cono (Vainilla)", 
+      "price" : 250, 
+      "image" : "../img/cono.png"
+    },
+    {
+      "id" : "conoCC" , 
+      "name" : "Cono combinado", 
+      "price" : 250, 
+      "image" : "../img/supercono.png"
+    },
+    {
+      "id" : "conoCD" , 
+      "name" : "Cono combinado", 
+      "price" : 250, 
+      "image" : "../img/cono-combinado.png"
+    }
+  ],
+  "sucursales": [
+    {
+      "id": 1,
+      "name": "Sucursal Cordoba (Córdoba) 1",
+      "adress": "General Paz 134"
+    },
+    {
+      "id": 2,
+      "name": "Sucursal Cordoba (Cordoba) 2",
+      "adress": "Jacinto Rios Y David Luque"
+    },
+    {
+      "id": 3,
+      "name": "Sucursal Cordoba (Cordoba) 3",
+      "adress": "Av. Rafael Núñez 4764"
+    },
+    {
+      "id": 4,
+      "name": "Sucursal Buenos Aires (CABA) 1",
+      "adress": "Av. Belgrano 690"
+    },
+    {
+      "id": 5,
+      "name": "Sucursal Buenos Aires (CABA) 2",
+      "adress": "Av. Callao 1062"
+    },
+    {
+      "id": 6,
+      "name": "Sucursal Buenos Aires (CABA) 3",
+      "adress": "Bonpland 2500 "
+    },
+    {
+      "id": 7,
+      "name": "Sucursal Santa Fe (Rosario) 1",
+      "adress": "Vera Mujica 732"
+    },
+    {
+      "id": 8,
+      "name": "Sucursal Santa Fe (Rosario) 2",
+      "adress": "San Lorenzo 5823"
+    },
+    {
+      "id": 9,
+      "name": "Sucursal Entre rios (Parana) 1",
+      "adress": "Peat. San Martín 1020"
+    }
+  ]
+
+    
+}

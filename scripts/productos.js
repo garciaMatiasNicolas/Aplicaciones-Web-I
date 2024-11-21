@@ -9,65 +9,81 @@ let btnVaciar = document.getElementById("btnVaciar");
 let btnPedir = document.getElementById("btnEnd");
 let div = document.getElementById("loader");
 
-// FETCH OBJETOS //
-
-const funcion = async ()=> {
-   const api = await fetch("../db.json")
-   const data = await api.json()
-   print(data.hamburguesas) 
-}
-funcion()
-
-// PLANTILLAS //
-
-function print(array){
+// FETCH DATA //
+const mostrarCardsProductos = (array, seccion) => {
     array.forEach((element)=> {
-        let producto = document.getElementById("sectionHamburguesas");
-        let burguer = document.createElement("div");
-        burguer.innerHTML=
-                `<div class= " d-flex flex-column justify-content-between align-items-center mt-5 animacion">
-                    <img class="imgBurguers imgAnimacion mb-3" src="${element.image}" alt="">
-                    <h2 class="titleFooter">${element.name}</h2>
-                    <button type="button" class="btn btnColor btn-lg text-white" data-bs-toggle="modal" data-bs-target="#${element.id}">
-                    Descripcion
-                    </button>
-                    <div class="modal fade modals" id="${element.id}" tabindex="-1" aria-labelledby="${element.id}Label" aria-hidden="true">
-                    <div class = "modal-dialog">   
-                        <div class="modal-content">
-                            <div class="modal-header d-flex flex-column justify-content-between">
-                                <div class="d-flex justify-content-between align-items-center w-100">
-                                    <h2 class="modal-title fontTitle" id="${element.id}Label">${element.name}</h2>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <img class="imgBurguers mb-3" src="${element.image}" alt="${element.name}">
+        let seccionHtml;
+        if (seccion === "hamburguesas") {
+            seccionHtml = document.getElementById("sectionHamburguesas");
+        } else if (seccion === "pollos") {
+            seccionHtml = document.getElementById("sectionPollos");;
+        } else if (seccion === "postres") {
+            seccionHtml = document.getElementById("sectionPostres");
+        } else {
+            console.error("Sección no encontrada")
+        };
+
+        let cardProducto = document.createElement("div");
+        cardProducto.innerHTML=
+            `<div class= " d-flex flex-column justify-content-between align-items-center mt-5 animacion">
+                <img class="imgBurguers imgAnimacion mb-3" src="${element.image}" alt="">
+                <h2 class="titleFooter">${element.name}</h2>
+                <button type="button" class="btn btnColor btn-lg text-white" data-bs-toggle="modal" data-bs-target="#${element.id}">
+                Descripcion
+                </button>
+                <div class="modal fade modals" id="${element.id}" tabindex="-1" aria-labelledby="${element.id}Label" aria-hidden="true">
+                <div class = "modal-dialog">   
+                    <div class="modal-content">
+                        <div class="modal-header d-flex flex-column justify-content-between">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                                <h2 class="modal-title fontTitle" id="${element.id}Label">${element.name}</h2>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
-                            <p class="fontP">${element.description}</p>
-                            </div>
-                            <div class="modal-footer d-flex justify-content-between" id="modalF">
-                                <h2 class="fontTitle">Precio: ${element.price}$</h2>
-                                <button id="btn-${element.id}" type="button" class="btns btn btnColor text-white" data-bs-dismiss="modal" aria-label="Close">Añadir a mi pedido</button>
-                            </div>
+                            <img class="imgBurguers mb-3" src="${element.image}" alt="${element.name}">
+                        </div>
+                        <div class="modal-body">
+                        <p class="fontP">${element.description}</p>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-between" id="modalF">
+                            <h2 class="fontTitle">Precio: ${element.price}$</h2>
+                            <button id="btn-${element.id}" type="button" class="btns btn btnColor text-white" data-bs-dismiss="modal" aria-label="Close">Añadir a mi pedido</button>
                         </div>
                     </div>
-                    </div>
-                </div>`;
-        producto.appendChild(burguer);
+                </div>
+                </div>
+            </div>`;
+
+        seccionHtml.appendChild(cardProducto);
         let btnAdd = document.getElementById(`btn-${element.id}`);
         btnAdd.addEventListener("click", () => {
             agregarCarrito(element)
             Toastify({
-                text: `Hamburguesa ${element.name} agregado`,
+                text: `${element.name} agregado`,
                 duration: 1500,
                 style: {
                     background: "black",
-                  }
+                }
                 }).showToast();
         });
     })
-}
+};
 
-function ver(){
+const obtenerProductos = async ()=> {
+    try {
+        const api = await fetch("../db.json");
+        const data = await api.json();
+        // Ejecutar funcion solo si me encuentro en el html del producto
+        document.getElementById("sectionHamburguesas") !== null && mostrarCardsProductos(data.hamburguesas, 'hamburguesas');
+        document.getElementById("sectionPollos") !== null && mostrarCardsProductos(data.pollos, 'pollos');
+        document.getElementById("sectionPostres") !== null && mostrarCardsProductos(data.postres, 'postres'); 
+    } catch (error) {
+        console.error("Ocurrio un error", error);
+    }
+};
+
+obtenerProductos();
+
+const mostrarCarrito = () => {
     let plantilla = ``; 
     //Imprimir en el modal porductos seleccionados
     carrito.forEach((element)=> {
@@ -93,33 +109,32 @@ function ver(){
            let card = document.getElementById(`card${element.id}`);
            card.remove()
            localStorage.setItem("carritoCompras", JSON.stringify(carrito))
-           ver()
+           mostrarCarrito()
         })
     })
     // Calcular total de los productos seleccionados
     carrito.length === 0 ? carritoVacio() : total.innerHTML = carrito.reduce((acum, element) => acum + element.price, 0);
-}
+};
 
 // BOTONES Y FUNCIONES// 
-
-function agregarCarrito(producto){
+const agregarCarrito = (producto) => {
     carrito.push(producto)
     localStorage.setItem("carritoCompras", JSON.stringify(carrito));
-}
+};
 
-function carritoVacio(){
+const carritoVacio = () => {
     modalCarrito.innerHTML = `<h3 class="fontTitle1">No has seleccionado ningun producto</h3>`;
     precio.className="d-none"
-}
+};
 
 btnVaciar.addEventListener("click", ()=> {
     carrito.splice(0, carrito.length);
     localStorage.removeItem("carritoCompras");
-    ver();
+    mostrarCarrito();
 })
 
 botonCarrito.addEventListener("click", () => {
-    ver();
+    mostrarCarrito();
 });
 
 btnPedir.addEventListener("click", ()=> {
@@ -153,7 +168,7 @@ btnPedir.addEventListener("click", ()=> {
                 })
                 carrito.splice(0, carrito.length);
                 localStorage.removeItem("carritoCompras")
-                ver(carrito)
+                mostrarCarrito(carrito)
             }
         })
         }

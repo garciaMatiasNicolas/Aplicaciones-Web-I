@@ -1,5 +1,18 @@
-// VARIABLES //
+function checkUserToken() {
+    if (!localStorage.getItem("userToken") || !localStorage.getItem("userEmail")) {
+      Swal.fire({
+        title: "Debe iniciar sesión",
+        text: "Por favor, inicie sesión para continuar.",
+        icon: "warning",
+        confirmButtonText: "Aceptar",
+      }).then(() => {
+        window.location.href = "login.html"; 
+      });
+    }
+};
+checkUserToken();
 
+// VARIABLES //
 let sectionS = document.getElementById("sucursales");
 let input = document.getElementById("floatingInputValue");
 let section = document.getElementById("indexCards");
@@ -9,7 +22,6 @@ let celdas = document.getElementsByTagName("td");
 const cardsFetch = async () => {
     const data = await fetch("db.json")
     const response = await data.json();
-    console.log(response.index.cards)
     return response.index.cards;
 };
 

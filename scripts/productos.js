@@ -1,5 +1,18 @@
-// ARRAYS Y VARIABLES //
+function checkUserToken() {
+    if (!localStorage.getItem("userToken") || !localStorage.getItem("userEmail")) {
+      Swal.fire({
+        title: "Debe iniciar sesión",
+        text: "Por favor, inicie sesión para continuar.",
+        icon: "warning",
+        confirmButtonText: "Aceptar",
+      }).then(() => {
+        window.location.href = "../login.html"; 
+      });
+    }
+};
+checkUserToken();
 
+// ARRAYS Y VARIABLES //
 let carrito = JSON.parse(localStorage.getItem("carritoCompras")) || [] ;
 let total = document.getElementById("precioTotal");
 let precio = document.getElementById("precio")
@@ -137,40 +150,103 @@ botonCarrito.addEventListener("click", () => {
     mostrarCarrito();
 });
 
-btnPedir.addEventListener("click", ()=> {
-    Swal.fire({
-        title: 'Dejanos tus datos',
-        text: "Nos estaremos comunicando con vos para darte el status de tu pedido",
-        icon: 'question',
-        iconColor:"#ff0000",
-        input: "text",
-        inputLabel: "Tu nombre y apellido",
-        confirmButtonColor: ' #ff0000',
-        confirmButtonText: 'Enviar'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire({
-            title: 'Dejanos tus datos',
-            input: "text",
-            inputLabel: "Tu numero de telefono",
-            confirmButtonText: 'Enviar',
-            icon: 'question',
-            iconColor:"#ff0000",
-            confirmButtonColor: ' #ff0000',
-        }).then((result2)=> {
-            if (result2.isConfirmed){
-                Swal.fire({
-                    title:"Gracias por comprar en Jovies",
-                    text: "Tu compra ha sido confirmada, nos estaremos comunicando con vos para darte el status de tu pedido",
-                    icon:"success",
-                    iconColor:"#ff0000",
-                    confirmButtonColor: ' #ff0000',
-                })
-                carrito.splice(0, carrito.length);
-                localStorage.removeItem("carritoCompras")
-                mostrarCarrito(carrito)
-            }
-        })
+
+// HACER PEDIDO //
+btnPedir.addEventListener("click", async () => {
+    checkUserToken();
+    try {
+        const response = await fetch("https://675f69951f7ad242699852ca.mockapi.io/api/appwebs/users");
+        const users = await response.json();
+        
+        const email = localStorage.getItem("userEmail"); 
+
+        const user = users.find((user) => user.email === email);
+        
+        if (!user) {
+            Swal.fire({
+                title: "Error",
+                text: "No se encontró un usuario con ese email.",
+                icon: "error",
+                confirmButtonText: "Aceptar",
+                confirmButtonColor: "#ff0000"
+            });
+            return;
         }
-      })
-})
+
+        const { value: userInfo } = await Swal.fire({
+            title: 'Tomamos tus datos del perfil',
+            text: "Si deseas, puedes modificarlos.",
+            icon: 'info',
+            iconColor: "#ff0000",
+            input: 'textarea',
+            inputValue: `
+                Nombre Completo: ${user.first_name} ${user.last_name}\n
+                Email: ${user.email}\n
+                Dirección: ${user.address}
+            `,
+            inputLabel: 'Tus datos',
+            confirmButtonText: 'Avanzar',
+            confirmButtonColor: '#ff0000',
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar'
+        });
+
+        if (userInfo === null) {
+            return;
+        }
+
+        const userInputs = userInfo.split("\n").map(line => line.trim());
+        const firstName = userInputs[0].split(":")[1]?.trim();
+        const lastName = userInputs[1].split(":")[1]?.trim();
+        const address = userInputs[2].split(":")[1]?.trim();
+
+        if (firstName !== user.first_name || lastName !== user.last_name || address !== user.address) {
+            const updatedUser = {
+                ...user,
+                first_name: firstName,
+                last_name: lastName,
+                address: address
+            };
+
+            await fetch(`https://675f69951f7ad242699852ca.mockapi.io/api/appwebs/users/${user.id}`, {
+                method: "PUT",
+                body: JSON.stringify(updatedUser),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+
+            Swal.fire({
+                title: "Pedido exitoso",
+                text: "Tu pedido ha sido creado correctamente, nos estaremos comunicando contigo para darte el status de tu pedido.",
+                icon: "success",
+                iconColor: "#ff0000",
+                confirmButtonColor: '#ff0000',
+            });
+
+        } else {
+            Swal.fire({
+                title: "Pedido exitoso",
+                text: "Tu pedido ha sido creado correctamente, nos estaremos comunicando contigo para darte el status de tu pedido.",
+                icon: "success",
+                iconColor: "#ff0000",
+                confirmButtonColor: '#ff0000',
+            });
+        }
+
+        carrito.splice(0, carrito.length);
+        localStorage.removeItem("carritoCompras");
+        mostrarCarrito(carrito);
+
+    } catch (error) {
+        console.error("Error:", error);
+        Swal.fire({
+            title: "Error",
+            text: "Hubo un problema al procesar tu pedido. Inténtalo nuevamente.",
+            icon: "error",
+            confirmButtonText: "Aceptar",
+            confirmButtonColor: "#ff0000"
+        });
+    }
+});
+

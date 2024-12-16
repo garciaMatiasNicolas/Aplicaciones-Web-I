@@ -49,6 +49,9 @@
                     <li class="nav-item">
                     <a class="nav-link active text-white navFont" href="hamburguesas.html">Hace tu pedido!</a>
                     </li>
+                    <li class="nav-item">
+                      <a class="nav-link active text-white navFont" href="#" onclick="cerrarSesion()">Cerrar sesión</a>
+                    </li>
                 </ul>
               </div>
             </div>
@@ -159,5 +162,13 @@
     <script src="../scripts/productos.js"></script>
     <!--Toastify-->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script>
+      function cerrarSesion() {
+        localStorage.removeItem('userToken');
+        localStorage.removeItem('userEmail');
+  
+        window.location.href = '../login.html'; 
+      }
+    </script>
 </body>
 </html>
